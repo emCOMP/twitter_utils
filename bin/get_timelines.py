@@ -113,7 +113,6 @@ if __name__ == "__main__":
                 try:
                     # write output
                     for status in cursor.items():
-                        print status._json["created_at"]
                         outfile.write(json.dumps(status._json) + u"\n")
                         cur_count += 1
                 except TweepError, e:
@@ -124,12 +123,11 @@ if __name__ == "__main__":
                     log.exception("Failed to get user '%s'" % id)
                     continue
 
-
                 # update progress
-                print "%3.2f%% done. (%d of %d users. %d tweets)" % (
+                log.debug("%3.2f%% done. (%d of %d users. %d tweets)" % (
                     (float(i) * 100.0 / float(total)),
                     i, total, cur_count
-                    )
+                    ))
 
     if missed_users is not None and len(missed_users) > 0:
         log.warn(
