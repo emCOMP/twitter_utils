@@ -1,0 +1,9 @@
+colorlog==2.6.0
+ezconf==0.1
+humanfriendly==1.43.1
+oauthlib==1.0.3
+requests==2.9.1
+requests-oauthlib==0.6.0
+six==1.10.0
+tweepy==3.5.0
+-e git+git@github.com:emCOMP/twitter_utils.git@0f9588fbae5d024adbacff08185dc02318ebb72b#egg=twitter_utils
